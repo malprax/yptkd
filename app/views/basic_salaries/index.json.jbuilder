@@ -1,1 +1,0 @@
-json.array! @basic_salaries, partial: 'basic_salaries/basic_salary', as: :basic_salary

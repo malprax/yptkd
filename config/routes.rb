@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :salaries
   resources :lectures
   resources :educations
-  resources :basic_salaries
   resources :functional_allowances
   resources :structural_allowances
   resources :special_allowances

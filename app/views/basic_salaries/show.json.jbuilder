@@ -1,1 +1,0 @@
-json.partial! "basic_salaries/basic_salary", basic_salary: @basic_salary

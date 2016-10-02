@@ -9,6 +9,12 @@
 </head>
 <body>
 <%= render 'shared/navigation' %>
+<% if flash[:notice] %>
+<div class='alert alert-success' id="notice"><%= notice %></div>
+<% end %>
+<% if flash[:alert] %>
+<div class='alert alert-success' id="notice"><%= notice %></div>
+<% end %>
 <%= yield %>
 
 </body>

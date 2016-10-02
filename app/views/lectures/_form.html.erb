@@ -4,10 +4,10 @@
   <div class="form-inputs">
     <%= f.input :nama %>
     <%= f.input :nidn %>
-    <%= f.input :education_id %>
-    <%= f.input :functional_allowance_id %>
-    <%= f.input :structural_allowance_id %>
-    <%= f.input :special_allowance_id %>
+    <%= f.association :education, label_method: :nama %>
+    <%= f.association :functional_allowance, label_method: :nama %>
+    <%= f.association :structural_allowance, label_method: :nama %>
+    <%= f.association :special_allowance, label_method: :nama %>
   </div>
 
   <div class="form-actions">

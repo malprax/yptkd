@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav pull-right">
         <li> <%#=link_to "Berita Dikti", "#" %></li>
         <li><%#= link_to "Login Wisuda", new_loginwisuda_path %></li>
-        <li><%=link_to 'Salaries', salaries_path%></li>
+        <li><%=link_to 'Gaji', salaries_path%></li>
         <%#= render 'shared/sign_form' %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pengaturan<span class="caret"></span></a>
@@ -27,9 +27,9 @@
             <li><%= link_to "Pendidikan", educations_path %></li>
             <li><%=link_to "Dosen", lectures_path %></li>
             <li><%=link_to "Fungsional Akademik", functional_allowances_path %></li>
-            <li><%=link_to "Jabatan", functional_allowances_path %></li>
-            <li><%=link_to "Jabatan Khusus", functional_allowances_path %></li>
-            
+            <li><%=link_to "Jabatan", structural_allowances_path %></li>
+            <li><%=link_to "Jabatan Khusus", special_allowances_path %></li>
+
           </ul>
         </li>
       </ul>

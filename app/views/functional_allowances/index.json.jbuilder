@@ -1,0 +1,1 @@
+json.array! @functional_allowances, partial: 'functional_allowances/functional_allowance', as: :functional_allowance

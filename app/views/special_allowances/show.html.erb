@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @special_allowance.nama %>
+</p>
+
+<p>
+  <strong>Satuan:</strong>
+  <%= @special_allowance.satuan %>
+</p>
+
+<%= link_to 'Edit', edit_special_allowance_path(@special_allowance) %> |
+<%= link_to 'Back', special_allowances_path %>

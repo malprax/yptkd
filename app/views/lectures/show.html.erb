@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @lecture.nama %>
+</p>
+
+<p>
+  <strong>Nidn:</strong>
+  <%= @lecture.nidn %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @lecture.education_id %>
+</p>
+
+<p>
+  <strong>Functional allowance:</strong>
+  <%= @lecture.functional_allowance_id %>
+</p>
+
+<p>
+  <strong>Structural allowance:</strong>
+  <%= @lecture.structural_allowance_id %>
+</p>
+
+<p>
+  <strong>Special allowance:</strong>
+  <%= @lecture.special_allowance_id %>
+</p>
+
+<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<%= link_to 'Back', lectures_path %>

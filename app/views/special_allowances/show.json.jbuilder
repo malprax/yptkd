@@ -1,0 +1,1 @@
+json.partial! "special_allowances/special_allowance", special_allowance: @special_allowance

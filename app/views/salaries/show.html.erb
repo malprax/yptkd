@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Form number:</strong>
+  <%= @salary.form_number %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @salary.period_id %>
+</p>
+
+<p>
+  <strong>Lecture:</strong>
+  <%= @salary.lecture_id %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @salary.tax %>
+</p>
+
+<p>
+  <strong>Regular gathering:</strong>
+  <%= @salary.regular_gathering %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @salary.total %>
+</p>
+
+<%= link_to 'Edit', edit_salary_path(@salary) %> |
+<%= link_to 'Back', salaries_path %>

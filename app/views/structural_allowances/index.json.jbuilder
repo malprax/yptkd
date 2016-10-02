@@ -1,0 +1,1 @@
+json.array! @structural_allowances, partial: 'structural_allowances/structural_allowance', as: :structural_allowance

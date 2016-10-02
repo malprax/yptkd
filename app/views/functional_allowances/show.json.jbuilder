@@ -1,0 +1,1 @@
+json.partial! "functional_allowances/functional_allowance", functional_allowance: @functional_allowance

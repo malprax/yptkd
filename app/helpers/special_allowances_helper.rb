@@ -1,0 +1,2 @@
+module SpecialAllowancesHelper
+end

@@ -1,0 +1,2 @@
+json.extract! lecture, :id, :nama, :nidn, :education_id, :functional_allowance_id, :structural_allowance_id, :special_allowance_id, :created_at, :updated_at
+json.url lecture_url(lecture, format: :json)

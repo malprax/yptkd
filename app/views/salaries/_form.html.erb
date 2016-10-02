@@ -1,0 +1,16 @@
+<%= simple_form_for(@salary) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :form_number %>
+    <%= f.input :period_id %>
+    <%= f.input :lecture_id %>
+    <%= f.input :tax %>
+    <%= f.input :regular_gathering %>
+    <%= f.input :total %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

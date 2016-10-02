@@ -1,0 +1,1 @@
+json.array! @special_allowances, partial: 'special_allowances/special_allowance', as: :special_allowance

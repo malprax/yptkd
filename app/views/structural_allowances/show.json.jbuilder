@@ -1,0 +1,1 @@
+json.partial! "structural_allowances/structural_allowance", structural_allowance: @structural_allowance

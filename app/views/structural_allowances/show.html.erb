@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @structural_allowance.nama %>
+</p>
+
+<p>
+  <strong>Satuan:</strong>
+  <%= @structural_allowance.satuan %>
+</p>
+
+<%= link_to 'Edit', edit_structural_allowance_path(@structural_allowance) %> |
+<%= link_to 'Back', structural_allowances_path %>

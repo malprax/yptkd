@@ -26,3 +26,19 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+rails g scaffold salaries form_number period_id lecture_id  tax regular_gathering:float total:float
+
+
+rails g scaffold lectures nama nidn education_id functional_allowance_id structural_allowance_id special_allowance_id
+
+rails g scaffold basic_salaries golongan satuan:float
+
+rails g scaffold functional_allowances nama satuan:float
+
+rails g scaffold structural_allowances nama satuan:float
+
+rails g scaffold special_allowances nama satuan:float
+
+rails g scaffold periods nama

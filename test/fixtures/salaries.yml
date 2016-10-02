@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  form_number: MyString
+  period_id: MyString
+  lecture_id: MyString
+  tax: 1.5
+  regular_gathering: 1.5
+  total: 1.5
+
+two:
+  form_number: MyString
+  period_id: MyString
+  lecture_id: MyString
+  tax: 1.5
+  regular_gathering: 1.5
+  total: 1.5

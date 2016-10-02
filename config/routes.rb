@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
+  resources :salaries
+  resources :lectures
+  resources :educations
+  resources :basic_salaries
+  resources :functional_allowances
+  resources :structural_allowances
+  resources :special_allowances
+  resources :periods
+  # get 'pages/index'
+
+  # resources :pages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'pages#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

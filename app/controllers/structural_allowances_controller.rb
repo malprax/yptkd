@@ -38,7 +38,7 @@ class StructuralAllowancesController < ApplicationController
 
     respond_to do |format|
       if @structural_allowance.save
-        format.html { redirect_to @structural_allowance, notice: 'Structural allowance was successfully created.' }
+        format.html { redirect_to structural_allowances_path, notice: 'Structural allowance was successfully created.' }
         format.json { render :show, status: :created, location: @structural_allowance }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class StructuralAllowancesController < ApplicationController
   def update
     respond_to do |format|
       if @structural_allowance.update(structural_allowance_params)
-        format.html { redirect_to @structural_allowance, notice: 'Structural allowance was successfully updated.' }
+        format.html { redirect_to structural_allowances_path, notice: 'Structural allowance was successfully updated.' }
         format.json { render :show, status: :ok, location: @structural_allowance }
       else
         format.html { render :edit }

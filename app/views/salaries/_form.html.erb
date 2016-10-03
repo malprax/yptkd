@@ -4,9 +4,9 @@
   <div class="form-inputs">
     <%= f.association :period, label_method: lambda{|period| "#{period.nama.titleize}"}, label: 'Periode' %>
     <%= f.association :lecture, label_method: lambda{|lecture| "#{lecture.nama.upcase}"}, label:'Dosen' %>
-    <%= f.input :regular_gathering, label: 'Arisan', label:'Jumlah Arisan Dalam Angka' %>
-    <%= f.input :potongan_pajak, label: 'Potongan Pajak' %>
-    <%= f.input :potongan_lain_lain, label:'Potongan Lain Lain' %>
+    <%= f.association :tax1, label: 'Arisan', placeholder: 'Angka Saja Tanpa Simbol' %>
+    <%= f.association :tax2, label: 'Potongan Pajak', placeholder: 'Angka Saja Tanpa Simbol' %>
+    <%= f.association :tax3, label:'Potongan Lain Lain', placeholder: 'Angka Saja Tanpa Simbol' %>
   </div>
 
   <div class="form-actions">

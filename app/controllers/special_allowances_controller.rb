@@ -28,7 +28,7 @@ class SpecialAllowancesController < ApplicationController
 
     respond_to do |format|
       if @special_allowance.save
-        format.html { redirect_to @special_allowance, notice: 'Special allowance was successfully created.' }
+        format.html { redirect_to special_allowances_path, notice: 'Special allowance was successfully created.' }
         format.json { render :show, status: :created, location: @special_allowance }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SpecialAllowancesController < ApplicationController
   def update
     respond_to do |format|
       if @special_allowance.update(special_allowance_params)
-        format.html { redirect_to @special_allowance, notice: 'Special allowance was successfully updated.' }
+        format.html { redirect_to special_allowances_path, notice: 'Special allowance was successfully updated.' }
         format.json { render :show, status: :ok, location: @special_allowance }
       else
         format.html { render :edit }

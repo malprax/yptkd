@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003131316) do
+ActiveRecord::Schema.define(version: 20161003134625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 20161003131316) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "performance_allowances", force: :cascade do |t|
+    t.string   "range_mahasiswa"
+    t.string   "satuan"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "periods", force: :cascade do |t|
     t.string   "nama"
     t.datetime "created_at", null: false
@@ -58,11 +65,12 @@ ActiveRecord::Schema.define(version: 20161003131316) do
     t.string   "form_number"
     t.string   "period_id"
     t.string   "lecture_id"
-    t.float    "tax"
-    t.float    "regular_gathering"
+    t.integer  "tax1_id"
+    t.integer  "tax2_id"
+    t.integer  "tax3_id"
     t.float    "total"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "special_allowances", force: :cascade do |t|
@@ -73,6 +81,13 @@ ActiveRecord::Schema.define(version: 20161003131316) do
   end
 
   create_table "structural_allowances", force: :cascade do |t|
+    t.string   "nama"
+    t.float    "satuan"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taxes", force: :cascade do |t|
     t.string   "nama"
     t.float    "satuan"
     t.datetime "created_at", null: false

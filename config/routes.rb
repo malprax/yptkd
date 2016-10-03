@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :performance_allowances
+  resources :taxes
   resources :classifications
   resources :salaries
   resources :lectures

@@ -14,9 +14,9 @@
         <% @educations.each do |education| %>
           <tr>
             <td><%= education.nama.upcase %></td>
-            <td><%= education.satuan %></td>
+            <td><%= "#{number_to_currency(education.satuan, precision: 0, unit:'Rp ')}" %></td>
 
-            <td><%= link_to 'Edit', edit_education_path(education) %>&nbsp;&nbsp;<%= link_to 'Destroy', education, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_education_path(education), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', education, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
 
           </tr>
         <% end %>

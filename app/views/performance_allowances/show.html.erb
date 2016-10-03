@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Range mahasiswa:</strong>
+  <%= @performance_allowance.range_mahasiswa %>
+</p>
+
+<p>
+  <strong>Satuan:</strong>
+  <%= @performance_allowance.satuan %>
+</p>
+
+<%= link_to 'Edit', edit_performance_allowance_path(@performance_allowance) %> |
+<%= link_to 'Back', performance_allowances_path %>

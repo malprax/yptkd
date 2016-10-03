@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class='container'>
+  <div class='row'>
+    <h3 class='lead'>Daftar Golongan Berdasarkan Peraturan Pemerintah No 30 Tahun 2015&nbsp;&nbsp;<%= link_to 'Tambah Golongan', new_classification_path, class:'btn btn-default' %></h3>
+    <table class='table table-hover table-striped'>
+      <thead>
+        <tr>
+          <th>Golongan</th>
+          <th>Satuan</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<h1>Listing Classifications</h1>
+      <tbody>
+        <% @classifications.each do |classification| %>
+          <tr>
+            <td><%= classification.nama %></td>
+            <td><%= "#{number_to_currency(classification.satuan, precision:0, unit:'Rp ')}" %></td>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nama</th>
-      <th>Satuan</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            <td><%= link_to 'Edit', edit_classification_path(classification), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Destroy', classification, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <tbody>
-    <% @classifications.each do |classification| %>
-      <tr>
-        <td><%= classification.nama %></td>
-        <td><%= classification.satuan %></td>
-        <td><%= link_to 'Show', classification %></td>
-        <td><%= link_to 'Edit', edit_classification_path(classification) %></td>
-        <td><%= link_to 'Destroy', classification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <br>
 
-<br>
 
-<%= link_to 'New Classification', new_classification_path %>
+  </div>
+</div>

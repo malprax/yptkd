@@ -16,9 +16,11 @@
 class Salary < ActiveRecord::Base
   belongs_to :period
   belongs_to :lecture
-  before_save :buat_nomor_slip_gaji, :total_gaji #, :pajak
+  belongs_to :tax1_id, class_name: 'Tax'
+  belongs_to :tax2_id, class_name: 'Tax'
+  belongs_to :tax3_id, class_name: 'Tax'
 
-  attr_accessor :potongan_pajak, :potongan_lain_lain
+  after_save :buat_nomor_slip_gaji, :total_gaji #, :pajak
 
   def buat_nomor_slip_gaji
     #code

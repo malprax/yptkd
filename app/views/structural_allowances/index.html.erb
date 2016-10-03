@@ -1,7 +1,7 @@
 
 <div class='container'>
   <div class='row'>
-    <h3 class='lead'>Rincian Besarnya Tunjangan Untuk Tiap Tiap Tugas Tambahan Dan Jabatan Akademik Berdasarkan Pepres 65 Tahun 2007&nbsp;&nbsp;<%= link_to 'Buat Jabatan Struktural', new_structural_allowance_path, class:'btn btn-default' %></h3>
+    <h3 class='lead'>Rincian Besarnya Tunjangan Struktural Berdasarkan Pepres 65 Tahun 2007&nbsp;&nbsp;<%= link_to 'Buat Jabatan Struktural', new_structural_allowance_path, class:'btn btn-default' %></h3>
     <table class='table table-hover table-striped'>
       <thead>
         <tr>
@@ -23,6 +23,9 @@
     </table>
 
     <br>
-    <%= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank' %>
+    <%= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank', class:'btn btn-default' %>
+    <br />
+    <br />
+
   </div>
 </div>

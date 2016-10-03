@@ -4,7 +4,7 @@ class EducationsController < ApplicationController
   # GET /educations
   # GET /educations.json
   def index
-    @educations = Education.all
+    @educations = Education.order('nama asc')
   end
 
   # GET /educations/1

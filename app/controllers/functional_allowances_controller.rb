@@ -4,7 +4,7 @@ class FunctionalAllowancesController < ApplicationController
   # GET /functional_allowances
   # GET /functional_allowances.json
   def index
-    @functional_allowances = FunctionalAllowance.all
+    @functional_allowances = FunctionalAllowance.order('satuan asc')
   end
 
   # GET /functional_allowances/1

@@ -44,21 +44,21 @@
                   <td><%= "#{number_to_currency(@salary.lecture.special_allowance.satuan, precision:0, unit:"Rp     ")}" rescue nil %></td>
                 </tr>
                 <tr>
-                  <td>POTONGAN KOPERASI</td>
-                  <td></td>
-                  <td class='minus'><%#= @salary.regular_gathering.present? ? "#{number_to_currency(@salary.regular_gathering, precision: 0, unit:"Rp     ")}""(-)" : " "  %></td>
-                </tr>
-                <tr>
                   <td>ARISAN</td>
                   <td></td>
                   <td class='minus'><%= @salary.regular_gathering.present? ? "#{number_to_currency(@salary.regular_gathering, precision: 0, unit:"Rp     ")}""(-)" : " "  %></td>
                 </tr>
                 <tr>
-                  <td>PAJAK</td>
+                  <td>POTONGAN PAJAK</td>
                   <td></td>
-                  <td class='minus'><%= @salary.tax.present? ? "#{number_to_currency(@salary.tax, precision:0, unit:"Rp     ")}""(-)" : "" rescue nil %></td>
+                  <td class='minus'><%= @salary.potongan_pajak.present? ? "#{number_to_currency(@salary.potongan_pajak, precision:0, unit:"Rp     ")}""(-)" : "" rescue nil %></td>
                 </tr>
 
+                <tr>
+                  <td>POTONGAN LAIN - LAIN</td>
+                  <td></td>
+                  <td class='minus'><%= @salary.potongan_lain_lain.present? ? "#{number_to_currency(@salary.potongan_lain_lain, precision:0, unit:"Rp     ")}""(-)" : "" rescue nil %></td>
+                </tr>
                 <tr>
                   <td></td>
                   <td><strong>TOTAL GAJI</strong></td>

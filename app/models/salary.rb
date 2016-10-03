@@ -18,6 +18,8 @@ class Salary < ActiveRecord::Base
   belongs_to :lecture
   before_save :buat_nomor_slip_gaji, :total_gaji #, :pajak
 
+  attr_accessor :potongan_pajak, :potongan_lain_lain
+
   def buat_nomor_slip_gaji
     #code
     self.form_number = "YPTKD/#{period.nama}/#{self.id}"
@@ -30,7 +32,7 @@ class Salary < ActiveRecord::Base
 
   def minus
     #code
-    @minus = "#{self.regular_gathering}"
+    @minus = "#{self.regular_gathering + self.potongan_pajak.to_f + self.potongan_lain_lain.to_f}"
   end
 
   def total_gaji

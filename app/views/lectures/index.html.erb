@@ -6,11 +6,11 @@
       <thead>
         <tr>
           <th>Nama</th>
-          <th>Nidn</th>
-          <th>Education</th>
-          <th>Functional allowance</th>
-          <th>Structural allowance</th>
-          <th>Special allowance</th>
+          <th>NIDN</th>
+          <th>Pendidikan</th>
+          <th>J. Fungsional</th>
+          <th>J. Struktural</th>
+          <th>J. Khusus</th>
           <th colspan="1"></th>
         </tr>
       </thead>
@@ -18,11 +18,11 @@
       <tbody>
         <% @lectures.each do |lecture| %>
           <tr>
-            <td><%= lecture.nama %></td>
+            <td><%= lecture.nama.upcase rescue nil %></td>
             <td><%= lecture.nidn %></td>
-            <td><%= lecture.education.nama rescue nil %></td>
-            <td><%= lecture.functional_allowance.nama rescue nil %></td>
-            <td><%= lecture.structural_allowance.nama rescue nil %></td>
+            <td><%= lecture.education.nama.upcase rescue nil %></td>
+            <td><%= lecture.functional_allowance.nama.titleize rescue nil %></td>
+            <td><%= lecture.structural_allowance.nama.titleize rescue nil %></td>
             <td><%= lecture.special_allowance.nama rescue nil %></td>
 
             <td><%= link_to 'Edit', edit_lecture_path(lecture) %>&nbsp;&nbsp;<%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -4,7 +4,17 @@ class StructuralAllowancesController < ApplicationController
   # GET /structural_allowances
   # GET /structural_allowances.json
   def index
-    @structural_allowances = StructuralAllowance.all
+    @structural_allowances = StructuralAllowance.order('satuan asc')
+    @title = 'Daftar Jabatan Struktural'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Daftar Rincian Jabatan Struktural',
+        template: 'structural_allowances/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /structural_allowances/1

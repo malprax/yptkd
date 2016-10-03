@@ -25,7 +25,7 @@ class Salary < ActiveRecord::Base
 
   def gaji
     #code
-    @gaji  = " #{self.lecture.education.satuan + self.lecture.functional_allowance.satuan + self.lecture.structural_allowance.satuan + self.lecture.special_allowance.satuan }"
+    @gaji  = " #{self.lecture.education.satuan rescue nil + self.lecture.functional_allowance.satuan rescue nil + self.lecture.structural_allowance.satuan rescue nil + self.lecture.special_allowance.satuan rescue nil }"
   end
 
   def minus

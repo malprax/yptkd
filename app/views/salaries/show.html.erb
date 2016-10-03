@@ -46,7 +46,7 @@
                 <tr>
                   <td>POTONGAN KOPERASI</td>
                   <td></td>
-                  <td><%= "#{number_to_currency(@salary.regular_gathering , precision:0, unit:"Rp     ")}"rescue nil %></td>
+                  <td class='minus'><%#= @salary.regular_gathering.present? ? "#{number_to_currency(@salary.regular_gathering, precision: 0, unit:"Rp     ")}""(-)" : " "  %></td>
                 </tr>
                 <tr>
                   <td>ARISAN</td>

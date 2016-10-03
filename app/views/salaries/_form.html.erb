@@ -2,15 +2,12 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :form_number %>
-    <%= f.input :period_id %>
-    <%= f.input :lecture_id %>
-    <%= f.input :tax %>
-    <%= f.input :regular_gathering %>
-    <%= f.input :total %>
+    <%= f.association :period, label_method: lambda{|period| "#{period.nama.titleize}"} %>
+    <%= f.association :lecture, label_method: lambda{|lecture| "#{lecture.nama.upcase}"} %>
+    <%= f.input :regular_gathering, label: 'Arisan', placeholder:'Tulis Dalam Angka Jumlahnya Tanpa Rupiah' %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit %>&nbsp;&nbsp;  <%= link_to 'Kembali', salaries_path, class:'btn btn-default' %>
   </div>
 <% end %>

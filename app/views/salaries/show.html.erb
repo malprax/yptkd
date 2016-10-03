@@ -1,34 +1,78 @@
-<p id="notice"><%= notice %></p>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12 col-sm-8 col-md-8 col-lg-8'>
+      <div class='panel panel-success'>
+        <div class='panel-heading'>
+              <%= @salary.form_number.upcase %>
+        </div>
+        <div class='panel-body'>
+              <table class='table table-hover table-striped'>
+                <br />
+                <tr>
+                  <td>NAMA</td>
+                  <td><%= @salary.lecture.nama.upcase %></td>
+                  <td>
 
-<p>
-  <strong>Form number:</strong>
-  <%= @salary.form_number %>
-</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>NIDN</td>
+                  <td><%= @salary.lecture.nidn rescue nil %></td>
+                  <td>
 
-<p>
-  <strong>Period:</strong>
-  <%= @salary.period_id %>
-</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>GAJI POKOK</td>
+                  <td><%= @salary.lecture.education.nama.upcase rescue nil %></td>
+                  <td><%= "#{number_to_currency(@salary.lecture.education.satuan, precision:0, unit: "Rp     ")}" rescue nil %></td>
 
-<p>
-  <strong>Lecture:</strong>
-  <%= @salary.lecture_id %>
-</p>
+                </tr>
+                <tr>
+                  <td>TUNJANGAN FUNGSIONAL</td>
+                  <td><%= @salary.lecture.functional_allowance.nama.upcase rescue nil %></td>
+                  <td><%= "#{number_to_currency(@salary.lecture.functional_allowance.satuan, precision:0, unit:"Rp     ")}" rescue nil %></td>
+                </tr>
+                <tr>
+                  <td>TUNJANGAN STRUKTURAL</td>
+                  <td><%= @salary.lecture.structural_allowance.nama.upcase rescue nil %></td>
+                  <td><%= "#{number_to_currency(@salary.lecture.structural_allowance.satuan, precision:0, unit:"Rp     ")}" rescue nil %></td>
+                </tr>
+                <tr>
+                  <td>TUNJANGAN KHUSUS</td>
+                  <td><%= @salary.lecture.special_allowance.nama.upcase rescue nil %></td>
+                  <td><%= "#{number_to_currency(@salary.lecture.special_allowance.satuan, precision:0, unit:"Rp     ")}" rescue nil %></td>
+                </tr>
+                <tr>
+                  <td>POTONGAN KOPERASI</td>
+                  <td></td>
+                  <td><%= "#{number_to_currency(@salary.regular_gathering , precision:0, unit:"Rp     ")}"rescue nil %></td>
+                </tr>
+                <tr>
+                  <td>ARISAN</td>
+                  <td></td>
+                  <td class='minus'><%= @salary.regular_gathering.present? ? "#{number_to_currency(@salary.regular_gathering, precision: 0, unit:"Rp     ")}""(-)" : " "  %></td>
+                </tr>
+                <tr>
+                  <td>PAJAK</td>
+                  <td></td>
+                  <td class='minus'><%= @salary.tax.present? ? "#{number_to_currency(@salary.tax, precision:0, unit:"Rp     ")}""(-)" : "" rescue nil %></td>
+                </tr>
 
-<p>
-  <strong>Tax:</strong>
-  <%= @salary.tax %>
-</p>
+                <tr>
+                  <td></td>
+                  <td><strong>TOTAL GAJI</strong></td>
+                  <td><%= "#{number_to_currency(@salary.total, precision:0, unit:"Rp     ")}" rescue nil %></td>
+                </tr>
+              </table>
+              <div class='pull-right'>
+                <%= link_to 'Edit', edit_salary_path(@salary), class: 'btn btn-default' %>&nbsp;&nbsp;
+                <%= link_to 'Cetak', '', class: 'btn btn-success' %>&nbsp;&nbsp;
+                <%= link_to 'Kembali', salaries_path, class:'btn btn-primary' %>
+              </div>
+        </div>
 
-<p>
-  <strong>Regular gathering:</strong>
-  <%= @salary.regular_gathering %>
-</p>
-
-<p>
-  <strong>Total:</strong>
-  <%= @salary.total %>
-</p>
-
-<%= link_to 'Edit', edit_salary_path(@salary) %> |
-<%= link_to 'Back', salaries_path %>
+      </div>
+    </div>
+  </div>
+</div>

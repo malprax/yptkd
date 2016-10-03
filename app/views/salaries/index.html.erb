@@ -1,37 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class='container'>
+  <div class='row'>
+    <h3 class='lead'>Daftar Gaji&nbsp;&nbsp;<%= link_to 'Buat Gaji', new_salary_path, class:'btn btn-default' %></h3>
+    <table class='table table-hover table-striped'>
+      <thead>
+        <tr>
+          <th>Nomor Slip Gaji</th>
+          <th>Dosen</th>
+          <th>Total</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
 
-<h1>Listing Salaries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Form number</th>
-      <th>Period</th>
-      <th>Lecture</th>
-      <th>Tax</th>
-      <th>Regular gathering</th>
-      <th>Total</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @salaries.each do |salary| %>
-      <tr>
-        <td><%= salary.form_number %></td>
-        <td><%= salary.period_id %></td>
-        <td><%= salary.lecture_id %></td>
-        <td><%= salary.tax %></td>
-        <td><%= salary.regular_gathering %></td>
-        <td><%= salary.total %></td>
-        <td><%= link_to 'Show', salary %></td>
-        <td><%= link_to 'Edit', edit_salary_path(salary) %></td>
-        <td><%= link_to 'Destroy', salary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Salary', new_salary_path %>
+      <tbody>
+        <% @salaries.each do |salary| %>
+          <tr>
+            <td><%= salary.form_number.upcase %></td>
+            <td><%= link_to salary.lecture.nama.upcase, salary rescue nil %></td>
+            <td><%= "#{number_to_currency(salary.total, precision:0, unit:"Rp     ")}" %></td>
+            <td><%= link_to 'Edit', edit_salary_path(salary) %>&nbsp;&nbsp;<%= link_to 'Hapus', salary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+  </div>
+</div>

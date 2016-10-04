@@ -1,6 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <h3 class='lead'>Daftar Golongan Berdasarkan Peraturan Pemerintah No 30 Tahun 2015&nbsp;&nbsp;<%= link_to 'Tambah Golongan', new_classification_path, class:'btn btn-default' %></h3>
+    <h3 class='lead'>Rincian Golongan Dan Tunjangannya Berdasarkan Peraturan Pemerintah No 30 Tahun 2015&nbsp;&nbsp;<%= link_to 'Tambah Golongan', new_classification_path, class:'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
     <table class='table table-hover table-striped'>
       <thead>
         <tr>
@@ -16,7 +16,7 @@
             <td><%= classification.nama %></td>
             <td><%= "#{number_to_currency(classification.satuan, precision:0, unit:'Rp ')}" %></td>
 
-            <td><%= link_to 'Edit', edit_classification_path(classification), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Destroy', classification, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+            <td><%= link_to 'Edit', edit_classification_path(classification), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', classification, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
             <td></td>
           </tr>
         <% end %>

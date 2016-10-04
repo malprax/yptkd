@@ -1,6 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <h3 class='lead'>Tunjangan Fungsional Berdasarkan PePres No 65 Tahun 2007&nbsp;&nbsp;<%= link_to 'New Functional allowance', new_functional_allowance_path, class:'btn btn-default' %>
+    <h3 class='lead'>Rincian Fungsional Dan Tunjangannya Berdasarkan PePres No 65 Tahun 2007&nbsp;&nbsp;<%= link_to 'Buat Jabatan Fungsional', new_functional_allowance_path, class:'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank', class:'btn btn-primary' %>
     </h3>
 
     <table class='table table-hover table-striped'>
@@ -8,7 +8,7 @@
         <tr>
           <th>Nama</th>
           <th>Satuan</th>
-          <th colspan="3"></th>
+          <th colspan="1"></th>
         </tr>
       </thead>
 
@@ -17,9 +17,8 @@
           <tr>
             <td><%= functional_allowance.nama.titleize rescue nil %></td>
             <td><%= "#{number_to_currency(functional_allowance.satuan, precision: 0, unit:'Rp ')}" %></td>
-            <td><%= link_to 'Show', functional_allowance %></td>
-            <td><%= link_to 'Edit', edit_functional_allowance_path(functional_allowance) %></td>
-            <td><%= link_to 'Destroy', functional_allowance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_functional_allowance_path(functional_allowance), class: 'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', functional_allowance, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+            <td></td>
           </tr>
         <% end %>
       </tbody>

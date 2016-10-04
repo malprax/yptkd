@@ -1,6 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <h3 class='lead'>Daftar Gaji&nbsp;&nbsp;<%= link_to 'Buat Gaji', new_salary_path, class:'btn btn-default' %></h3>
+    <h3 class='lead'>Rincian Gaji Dan Kinerjanya&nbsp;&nbsp;<%= link_to 'Buat Gaji', new_salary_path, class:'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
     <table class='table table-hover table-striped'>
       <thead>
         <tr>
@@ -17,7 +17,7 @@
             <td><%= salary.form_number.upcase %></td>
             <td><%= link_to salary.lecture.nama.upcase, salary rescue nil %></td>
             <td><%= "#{number_to_currency(salary.total, precision:0, unit:"Rp     ")}" %></td>
-            <td><%= link_to 'Edit', edit_salary_path(salary) %>&nbsp;&nbsp;<%= link_to 'Hapus', salary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_salary_path(salary), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', salary, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
           </tr>
         <% end %>
       </tbody>

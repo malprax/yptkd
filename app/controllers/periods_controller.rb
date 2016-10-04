@@ -4,7 +4,7 @@ class PeriodsController < ApplicationController
   # GET /periods
   # GET /periods.json
   def index
-    @periods = Period.order('nama asc')
+    @periods = Period.sortir
     @title = 'Rincian Periode'
     respond_to do |format|
       format.html
@@ -79,6 +79,6 @@ class PeriodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def period_params
-      params.require(:period).permit(:nama)
+      params.require(:period).permit(:bulan, :tahun)
     end
 end

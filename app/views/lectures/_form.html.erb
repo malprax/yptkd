@@ -4,10 +4,14 @@
   <div class="form-inputs">
     <%= f.input :nama, label: 'Nama'  %>
     <%= f.input :nidn, label: 'NIDN'  %>
-    <%= f.association :education, label_method: :nama, label: 'Pendidikan' %>
+    <%= f.association :education, label_method: :nama, label: 'Pendidikan', label_method: lambda{|education|"#{education.nama.upcase}"} %>
+    <%= f.association :classification, label_method: lambda{|classification|"#{classification.nama}"}, label: 'Golongan' %>
     <%= f.association :functional_allowance, label_method: :nama, label: 'Jabatan Fungsional' %>
     <%= f.association :structural_allowance, label_method: :nama, label: 'Jabatan Struktural' %>
     <%= f.association :special_allowance, label_method: :nama, label: 'Jabatan Khusus' %>
+    <%= f.association :performance_allowance, label_method: lambda{|performance_allowance|"#{performance_allowance.range_mahasiswa}"}, label: 'Kinerja' %>
+
+
   </div>
 
   <div class="form-actions">

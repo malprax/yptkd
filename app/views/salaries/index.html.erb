@@ -14,7 +14,7 @@
       <tbody>
         <% @salaries.each do |salary| %>
           <tr>
-            <td><%= salary.form_number.upcase %></td>
+            <td><%= salary.form_number.upcase rescue nil %></td>
             <td><%= link_to salary.lecture.nama.upcase, salary rescue nil %></td>
             <td><%= "#{number_to_currency(salary.total, precision:0, unit:"Rp     ")}" %></td>
             <td><%= link_to 'Edit', edit_salary_path(salary), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', salary, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>

@@ -3,7 +3,8 @@
 # Table name: periods
 #
 #  id         :integer          not null, primary key
-#  nama       :string
+#  bulan      :string
+#  tahun      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

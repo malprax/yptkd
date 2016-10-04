@@ -76,11 +76,7 @@
                   <td><%= "#{number_to_currency(@salary.total, precision:0, unit:"Rp     ")}" rescue nil %></td>
                 </tr>
               </table>
-              <div class='pull-right'>
-                <%= link_to 'Edit', edit_salary_path(@salary), class: 'btn btn-default' %>&nbsp;&nbsp;
-                <%= link_to 'Cetak', salary_path(@salary, format: 'pdf'), target: '_blank', class: 'btn btn-success' %>&nbsp;&nbsp;
-                <%= link_to 'Kembali', salaries_path, class:'btn btn-primary' %>
-              </div>
+              
         </div>
 
       </div>

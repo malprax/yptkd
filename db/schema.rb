@@ -40,12 +40,14 @@ ActiveRecord::Schema.define(version: 20161003134625) do
   create_table "lectures", force: :cascade do |t|
     t.string   "nama"
     t.string   "nidn"
-    t.string   "education_id"
-    t.string   "functional_allowance_id"
-    t.string   "structural_allowance_id"
-    t.string   "special_allowance_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "education_id"
+    t.integer  "functional_allowance_id"
+    t.integer  "structural_allowance_id"
+    t.integer  "special_allowance_id"
+    t.integer  "performance_allowance_id"
+    t.integer  "classification_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "performance_allowances", force: :cascade do |t|
@@ -53,6 +55,13 @@ ActiveRecord::Schema.define(version: 20161003134625) do
     t.string   "satuan"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "periods", force: :cascade do |t|
+    t.string   "bulan"
+    t.string   "tahun"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "salaries", force: :cascade do |t|

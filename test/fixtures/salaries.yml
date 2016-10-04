@@ -2,15 +2,16 @@
 #
 # Table name: salaries
 #
-#  id                :integer          not null, primary key
-#  form_number       :string
-#  period_id         :string
-#  lecture_id        :string
-#  tax               :float
-#  regular_gathering :float
-#  total             :float
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id          :integer          not null, primary key
+#  form_number :string
+#  period_id   :integer
+#  lecture_id  :integer
+#  tax1_id     :integer
+#  tax2_id     :integer
+#  tax3_id     :integer
+#  total       :float
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

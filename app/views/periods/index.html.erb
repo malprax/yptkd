@@ -14,7 +14,7 @@
       <tbody>
         <% @periods.each do |period| %>
           <tr>
-            <td><%= period.bulan.titleize %></td>
+            <td><%= period.bulan.titleize rescue nil %></td>
             <td><%= period.tahun %></td>
             <td><%= link_to 'Edit', edit_period_path(period), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', period, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
           </tr>

@@ -1,6 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <h3 class='lead'>Rincian Pajak Dan Satuan Biayanya&nbsp;&nbsp;<%= link_to 'Buat Pajak', new_tax_path, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', taxes_path(@taxes, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
+    <h3 class='lead'>Rincian Potongan Dan Satuan Biayanya&nbsp;&nbsp;<%= link_to 'Buat Pajak', new_tax_path, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', taxes_path(@taxes, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
     <table class='table table-hover table-striped'>
       <thead>
         <tr>
@@ -14,7 +14,7 @@
         <% @taxes.each do |tax| %>
           <tr>
             <td><%= tax.nama %></td>
-            <td><%= tax.satuan %></td>
+            <td><%= "#{number_to_currency(tax.satuan, precision:0, unit:'Rp ')}" %></td>
             <td><%= link_to 'Edit', edit_tax_path(tax), class: 'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Destroy', tax, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
           </tr>
         <% end %>

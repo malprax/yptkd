@@ -4,7 +4,7 @@ class SalariesController < ApplicationController
   # GET /salaries
   # GET /salaries.json
   def index
-    @salaries = Salary.order('period asc')
+    @salaries = Salary.order('period_id asc')
     @title = 'Rincian Daftar Gaji Dosen'
     respond_to do |format|
       format.html
@@ -20,6 +20,16 @@ class SalariesController < ApplicationController
   # GET /salaries/1
   # GET /salaries/1.json
   def show
+    @title = 'Rincian Daftar Gaji Dosen'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Gaji Dosen #{@salary.lecture.name}',
+        template: 'salaries/show.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /salaries/new
@@ -79,6 +89,6 @@ class SalariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def salary_params
-      params.require(:salary).permit(:form_number, :period_id, :lecture_id, :total, :tax_id)
+      params.require(:salary).permit(:form_number, :period_id, :lecture_id, :total, :tax1_id, :tax2_id, :tax3_id)
     end
 end

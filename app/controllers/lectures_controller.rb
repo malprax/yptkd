@@ -79,6 +79,6 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:nama, :nidn, :education_id, :functional_allowance_id, :structural_allowance_id, :special_allowance_id)
+      params.require(:lecture).permit(:nama, :nidn, :education_id, :functional_allowance_id, :structural_allowance_id, :special_allowance_id, :performance_allowance_id, :classification_id)
     end
 end

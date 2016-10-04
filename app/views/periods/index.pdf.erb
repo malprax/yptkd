@@ -2,17 +2,21 @@
   <div class='row'>
     <h3 class='lead'>Periode</h3>
 
-    <table class='table table-hover table-striped'>
+    <table class='table table-hover table-striped table-bordered'>
       <thead>
         <tr>
-          <th>Nama</th>
+          <th>Bulan</th>
+          <th>Tahun</th>
+          <th colspan="1"></th>
         </tr>
       </thead>
 
       <tbody>
         <% @periods.each do |period| %>
           <tr>
-            <td><%= period.nama.titleize %></td>
+            <td><%= period.bulan.titleize %></td>
+            <td><%= period.tahun %></td>
+            <td><%= link_to 'Edit', edit_period_path(period), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', period, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
           </tr>
         <% end %>
       </tbody>

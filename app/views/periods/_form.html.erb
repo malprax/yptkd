@@ -2,7 +2,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nama, label: 'Nama' %>
+    <%= f.input :bulan, label: 'Bulan', collection: ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Nopember','Desember'] %>
+    <%= f.input :tahun, label: 'Tahun' %>
   </div>
 
   <div class="form-actions">

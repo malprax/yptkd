@@ -1,6 +1,6 @@
 <div class="container">
   <div class='row'>
-    <h3 class='lead'>Periode&nbsp;&nbsp;<%= link_to 'Buat Periode', new_period_path, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
+    <h3 class='lead'>Periode&nbsp;&nbsp;<%= link_to 'Buat Periode', new_period_path, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', periods_path(@periods, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
 
     <table class='table table-hover table-striped'>
       <thead>

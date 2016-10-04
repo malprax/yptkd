@@ -1,6 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <h3 class='lead'>Daftar Dosen&nbsp;&nbsp;<%= link_to 'Tambah Dosen', new_lecture_path, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
+    <h3 class='lead'>Daftar Dosen&nbsp;&nbsp;<%= link_to 'Tambah Dosen', new_lecture_path, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', lectures_path(@lectures, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
 
     <table class='table table-hover table-striped'>
       <thead>

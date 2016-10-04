@@ -1,6 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <h3 class='lead'>Rincian Jabatan Khusus Dan Tunjangannya&nbsp;&nbsp;<%= link_to 'Buat Jabatan Khusus', new_special_allowance_path, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
+    <h3 class='lead'>Rincian Jabatan Khusus Dan Tunjangannya&nbsp;&nbsp;<%= link_to 'Buat Jabatan Khusus', new_special_allowance_path, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Download', special_allowances_path(@special_allowances, format:'pdf'), target:'_blank', class:'btn btn-primary' %></h3>
     <table class='table table-hover table-striped'>
       <thead>
         <tr>
@@ -17,7 +17,7 @@
             <td><%= special_allowance.satuan %></td>
 
             <td><%= link_to 'Edit', edit_special_allowance_path(special_allowance), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Destroy', special_allowance, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
-            
+
           </tr>
         <% end %>
       </tbody>

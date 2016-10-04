@@ -5,6 +5,16 @@ class FunctionalAllowancesController < ApplicationController
   # GET /functional_allowances.json
   def index
     @functional_allowances = FunctionalAllowance.order('satuan asc')
+    @title = 'Rincian Jabatan Fungsional Dan Tunjangannya'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Jabatan Fungsional Dan Tunjangannya',
+        template: 'functional_allowances/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /functional_allowances/1

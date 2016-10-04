@@ -4,7 +4,17 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.all
+    @lectures = Lecture.order('nama asc')
+    @title = 'Daftar Dosen Yayasan'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Daftar Dosen Yayasan',
+        template: 'lectures/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /lectures/1

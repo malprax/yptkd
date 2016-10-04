@@ -4,7 +4,17 @@ class TaxesController < ApplicationController
   # GET /taxes
   # GET /taxes.json
   def index
-    @taxes = Tax.all
+    @taxes = Tax.order('satuan asc')
+    @title = 'Rincian Pajak Dan Biaya Satuannya'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Pajak Dan Biaya Satuannya',
+        template: 'taxes/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /taxes/1

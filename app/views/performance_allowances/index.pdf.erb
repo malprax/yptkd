@@ -1,0 +1,26 @@
+
+<div class='container'>
+  <div class='row'>
+    <h3 class='lead'>Rincian Kinerja Dan Tunjangannya Berdasarkan Pepres 65 Tahun 2007</h3>
+    <table class='table table-hover table-striped'>
+      <thead>
+        <tr>
+          <th>Jumlah Mahasiswa</th>
+          <th>Satuan</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @performance_allowances.each do |performance_allowance| %>
+          <tr>
+            <td><%= performance_allowance.range_mahasiswa %></td>
+            <td><%= "#{number_to_currency(performance_allowance.satuan, precision:0, unit:'Rp ')}" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <%#= link_to 'Download', structural_allowances_path(@structural_allowances, format:'pdf'), target:'_blank' %>
+  </div>
+</div>

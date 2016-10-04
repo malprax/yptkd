@@ -1,0 +1,25 @@
+<div class='container'>
+  <div class='row'>
+    <h3 class='lead'>Rincian Fungsional Dan Tunjangannya Berdasarkan PePres No 65 Tahun 2007</h3>
+
+    <table class='table table-hover table-striped'>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Satuan</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @functional_allowances.each do |functional_allowance| %>
+          <tr>
+            <td><%= functional_allowance.nama.titleize rescue nil %></td>
+            <td><%= "#{number_to_currency(functional_allowance.satuan, precision: 0, unit:'Rp ')}" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+  </div>
+</div>

@@ -4,7 +4,16 @@ class ClassificationsController < ApplicationController
   # GET /classifications
   # GET /classifications.json
   def index
-    @classifications = Classification.all
+    @classifications = Classification.order('satuan asc')
+    @title = 'Rincian Golongan Dan Tunjangannya'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Golongan Dan Tunjangannya',
+        template: 'classifications/index.pdf.erb',
+        layout: 'pdf.html.erb'
+      end
+    end
   end
 
   # GET /classifications/1

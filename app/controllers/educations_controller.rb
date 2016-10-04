@@ -4,7 +4,17 @@ class EducationsController < ApplicationController
   # GET /educations
   # GET /educations.json
   def index
-    @educations = Education.order('nama asc')
+    @educations = Education.order('satuan asc')
+    @title = 'Rincian Pendidikan Dan Tunjangannya'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Pendidikan Dan Tunjangannya',
+        template: 'educations/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /educations/1

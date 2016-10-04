@@ -4,7 +4,17 @@ class SpecialAllowancesController < ApplicationController
   # GET /special_allowances
   # GET /special_allowances.json
   def index
-    @special_allowances = SpecialAllowance.all
+    @special_allowances = SpecialAllowance.order('satuan asc')
+    @title = 'Rincian Jabatan Khusus Dan Tunjangannya'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Jabatan Khusus Dan Tunjangannya',
+        template: 'special_allowances/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /special_allowances/1

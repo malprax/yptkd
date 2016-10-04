@@ -4,8 +4,17 @@ class PerformanceAllowancesController < ApplicationController
   # GET /performance_allowances
   # GET /performance_allowances.json
   def index
-    @performance_allowances = PerformanceAllowance.all
-  end
+    @performance_allowances = PerformanceAllowance.order('satuan asc')
+    @title = 'Rincian Kinerja Dan Tunjangannya'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Kinerja Dan Tunjangannya',
+        template: 'performance_allowances/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end  end
 
   # GET /performance_allowances/1
   # GET /performance_allowances/1.json

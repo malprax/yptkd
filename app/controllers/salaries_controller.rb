@@ -4,7 +4,17 @@ class SalariesController < ApplicationController
   # GET /salaries
   # GET /salaries.json
   def index
-    @salaries = Salary.all
+    @salaries = Salary.order('period asc')
+    @title = 'Rincian Daftar Gaji Dosen'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Daftar Gaji Dosen',
+        template: 'salaries/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /salaries/1

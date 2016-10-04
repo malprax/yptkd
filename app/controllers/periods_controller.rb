@@ -4,7 +4,17 @@ class PeriodsController < ApplicationController
   # GET /periods
   # GET /periods.json
   def index
-    @periods = Period.all
+    @periods = Period.order('nama asc')
+    @title = 'Rincian Periode'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Rincian Periode',
+        template: 'periods/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /periods/1

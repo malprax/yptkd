@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <h3 class='lead'>Rincian Jenjang Pendidikan Dan Tunjangannya</h3>
+    <table class='table table-hover table-striped'>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Satuan</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @educations.each do |education| %>
+          <tr>
+            <td><%= education.nama.upcase %></td>
+            <td><%= "#{number_to_currency(education.satuan, precision: 0, unit:'Rp ')}" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+  </div>
+</div>

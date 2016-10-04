@@ -1,0 +1,24 @@
+<div class="container">
+  <div class='row'>
+    <h3 class='lead'>Periode</h3>
+
+    <table class='table table-hover table-striped'>
+      <thead>
+        <tr>
+          <th>Nama</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @periods.each do |period| %>
+          <tr>
+            <td><%= period.nama.titleize %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+  </div>
+
+</div>

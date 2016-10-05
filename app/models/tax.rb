@@ -12,4 +12,6 @@
 class Tax < ActiveRecord::Base
   has_many :salaries, dependent: :destroy
 
+  validates_presence_of :nama, :satuan
+
 end

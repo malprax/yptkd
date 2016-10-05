@@ -11,4 +11,5 @@
 
 class Education < ActiveRecord::Base
   has_many :lectures
+  validates_presence_of :nama, :satuan
 end

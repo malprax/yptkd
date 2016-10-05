@@ -23,6 +23,8 @@ class Salary < ActiveRecord::Base
 
   before_save :buat_nomor_slip_gaji, :total_gaji #, :pajak
 
+  validates_presence_of :preiod, :lecture
+
   def buat_nomor_slip_gaji
     #code
     self.form_number = "YPTKD/#{period.bulan}/#{period.tahun}/#{self.id}"

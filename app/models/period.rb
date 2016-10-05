@@ -11,6 +11,7 @@
 
 class Period < ActiveRecord::Base
   has_many :salaries
+  validates_presence_of :bulan, :tahun
 
   scope :sortir, ->{order('id asc')}
 end

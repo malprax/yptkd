@@ -38,7 +38,7 @@ class LecturesController < ApplicationController
 
     respond_to do |format|
       if @lecture.save
-        format.html { redirect_to lectures_path, notice: 'Lecture was successfully created.' }
+        format.html { redirect_to lectures_path, notice: 'Data Dosen Telah Dibuat.' }
         format.json { render :show, status: :created, location: @lecture }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class LecturesController < ApplicationController
   def update
     respond_to do |format|
       if @lecture.update(lecture_params)
-        format.html { redirect_to lectures_path, notice: 'Lecture was successfully updated.' }
+        format.html { redirect_to lectures_path, notice: 'Data Dosen Telah Diperbarui.' }
         format.json { render :show, status: :ok, location: @lecture }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class LecturesController < ApplicationController
   def destroy
     @lecture.destroy
     respond_to do |format|
-      format.html { redirect_to lectures_url, notice: 'Lecture was successfully destroyed.' }
+      format.html { redirect_to lectures_url, notice: 'Data Dosen Telah Dihapus.' }
       format.json { head :no_content }
     end
   end

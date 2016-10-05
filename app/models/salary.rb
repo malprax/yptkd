@@ -25,7 +25,7 @@ class Salary < ActiveRecord::Base
 
   def buat_nomor_slip_gaji
     #code
-    self.form_number = "YPTKD/#{period.bulan}/#{period.tahun}/#{lecture.nama}"
+    self.form_number = "YPTKD/#{period.bulan}/#{period.tahun}/#{self.id}"
   end
 
   def gaji

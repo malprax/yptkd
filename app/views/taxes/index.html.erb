@@ -13,9 +13,9 @@
       <tbody>
         <% @taxes.each do |tax| %>
           <tr>
-            <td><%= tax.nama %></td>
+            <td><%= tax.nama.titleize %></td>
             <td><%= "#{number_to_currency(tax.satuan, precision:0, unit:'Rp ')}" %></td>
-            <td><%= link_to 'Edit', edit_tax_path(tax), class: 'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Destroy', tax, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+            <td><%= link_to 'Edit', edit_tax_path(tax), class: 'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', tax, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
           </tr>
         <% end %>
       </tbody>

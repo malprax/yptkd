@@ -37,7 +37,7 @@ class ClassificationsController < ApplicationController
 
     respond_to do |format|
       if @classification.save
-        format.html { redirect_to classifications_path, notice: 'Classification was successfully created.' }
+        format.html { redirect_to classifications_path, notice: 'Golongan Telah Dibuat.' }
         format.json { render :show, status: :created, location: @classification }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class ClassificationsController < ApplicationController
   def update
     respond_to do |format|
       if @classification.update(classification_params)
-        format.html { redirect_to classifications_path, notice: 'Classification was successfully updated.' }
+        format.html { redirect_to classifications_path, notice: 'Golongan Telah Diperbarui.' }
         format.json { render :show, status: :ok, location: @classification }
       else
         format.html { render :edit }
@@ -65,7 +65,7 @@ class ClassificationsController < ApplicationController
   def destroy
     @classification.destroy
     respond_to do |format|
-      format.html { redirect_to classifications_url, notice: 'Classification was successfully destroyed.' }
+      format.html { redirect_to classifications_url, notice: 'Golongan Telah Dihapus.' }
       format.json { head :no_content }
     end
   end

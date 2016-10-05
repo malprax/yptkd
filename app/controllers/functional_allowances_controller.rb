@@ -38,7 +38,7 @@ class FunctionalAllowancesController < ApplicationController
 
     respond_to do |format|
       if @functional_allowance.save
-        format.html { redirect_to functional_allowances_path, notice: 'Functional allowance was successfully created.' }
+        format.html { redirect_to functional_allowances_path, notice: 'Tunjangan Fungsional Telah Dibuat.' }
         format.json { render :show, status: :created, location: @functional_allowance }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class FunctionalAllowancesController < ApplicationController
   def update
     respond_to do |format|
       if @functional_allowance.update(functional_allowance_params)
-        format.html { redirect_to functional_allowances_path, notice: 'Functional allowance was successfully updated.' }
+        format.html { redirect_to functional_allowances_path, notice: 'Tunjangan Fungsional Telah Diperbarui.' }
         format.json { render :show, status: :ok, location: @functional_allowance }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class FunctionalAllowancesController < ApplicationController
   def destroy
     @functional_allowance.destroy
     respond_to do |format|
-      format.html { redirect_to functional_allowances_url, notice: 'Functional allowance was successfully destroyed.' }
+      format.html { redirect_to functional_allowances_url, notice: 'Tunjangan Fungsional Telah Dihapus.' }
       format.json { head :no_content }
     end
   end

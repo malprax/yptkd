@@ -4,9 +4,9 @@
   <div class="form-inputs">
     <%= f.association :period, label_method: lambda{|period| "#{period.bulan.titleize}"}, label: 'Periode' %>
     <%= f.association :lecture, label_method: lambda{|lecture| "#{lecture.nama.upcase}"}, label:'Dosen' %>
-    <%= f.association :tax1, label: 'Potongan 1', placeholder: 'Angka Saja Tanpa Simbol', label_method: lambda{|tax1|"#{tax1.nama} = #{tax1.satuan}"} %>
-    <%= f.association :tax2, label: 'Potongan 2', placeholder: 'Angka Saja Tanpa Simbol', label_method: lambda{|tax2|"#{tax2.nama} = #{tax2.satuan}"} %>
-    <%= f.association :tax3, label:'Potongan 3', placeholder: 'Angka Saja Tanpa Simbol', label_method: lambda{|tax3|"#{tax3.nama} = #{tax3.satuan}"} %>
+    <%= f.association :tax1, label: 'Potongan 1', placeholder: 'Angka Saja Tanpa Simbol', label_method: lambda{|tax1|"#{tax1.nama.titleize} = #{number_to_currency(tax1.satuan,precision:0, unit:'Rp ')}"} %>
+    <%= f.association :tax2, label: 'Potongan 2', placeholder: 'Angka Saja Tanpa Simbol', label_method: lambda{|tax2|"#{tax2.nama.titleize} = #{number_to_currency(tax2.satuan,precision:0, unit:'Rp ')}"} %>
+    <%= f.association :tax3, label:'Potongan 3', placeholder: 'Angka Saja Tanpa Simbol', label_method: lambda{|tax3|"#{tax3.nama.titleize} = #{number_to_currency(tax3.satuan,precision:0, unit:'Rp ')}"} %>
   </div>
 
   <div class="form-actions">

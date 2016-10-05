@@ -48,7 +48,7 @@ class SalariesController < ApplicationController
 
     respond_to do |format|
       if @salary.save
-        format.html { redirect_to @salary, notice: 'Salary was successfully created.' }
+        format.html { redirect_to @salary, notice: 'Gaji Telah Dibuat.' }
         format.json { render :show, status: :created, location: @salary }
       else
         format.html { render :new }
@@ -62,7 +62,7 @@ class SalariesController < ApplicationController
   def update
     respond_to do |format|
       if @salary.update(salary_params)
-        format.html { redirect_to @salary, notice: 'Salary was successfully updated.' }
+        format.html { redirect_to @salary, notice: 'Gaji Telah Diperbarui.' }
         format.json { render :show, status: :ok, location: @salary }
       else
         format.html { render :edit }
@@ -76,7 +76,7 @@ class SalariesController < ApplicationController
   def destroy
     @salary.destroy
     respond_to do |format|
-      format.html { redirect_to salaries_url, notice: 'Salary was successfully destroyed.' }
+      format.html { redirect_to salaries_url, notice: 'Gaji Telah Dihapus.' }
       format.json { head :no_content }
     end
   end

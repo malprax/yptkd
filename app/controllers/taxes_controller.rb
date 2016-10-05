@@ -38,7 +38,7 @@ class TaxesController < ApplicationController
 
     respond_to do |format|
       if @tax.save
-        format.html { redirect_to taxes_path, notice: 'Tax was successfully created.' }
+        format.html { redirect_to taxes_path, notice: 'Potongan Telah Dibuat.' }
         format.json { render :show, status: :created, location: @tax }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class TaxesController < ApplicationController
   def update
     respond_to do |format|
       if @tax.update(tax_params)
-        format.html { redirect_to taxes_path, notice: 'Tax was successfully updated.' }
+        format.html { redirect_to taxes_path, notice: 'Potongan Telah Diperbarui.' }
         format.json { render :show, status: :ok, location: @tax }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class TaxesController < ApplicationController
   def destroy
     @tax.destroy
     respond_to do |format|
-      format.html { redirect_to taxes_url, notice: 'Tax was successfully destroyed.' }
+      format.html { redirect_to taxes_url, notice: 'Potongan Telah Dihapus.' }
       format.json { head :no_content }
     end
   end

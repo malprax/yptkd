@@ -37,7 +37,7 @@ class PerformanceAllowancesController < ApplicationController
 
     respond_to do |format|
       if @performance_allowance.save
-        format.html { redirect_to performance_allowances_path, notice: 'Performance allowance was successfully created.' }
+        format.html { redirect_to performance_allowances_path, notice: 'Tunjangan Kinerja Telah Dibuat.' }
         format.json { render :show, status: :created, location: @performance_allowance }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class PerformanceAllowancesController < ApplicationController
   def update
     respond_to do |format|
       if @performance_allowance.update(performance_allowance_params)
-        format.html { redirect_to performance_allowances_path, notice: 'Performance allowance was successfully updated.' }
+        format.html { redirect_to performance_allowances_path, notice: 'Tunjangan Kinerja Telah Diperbarui.' }
         format.json { render :show, status: :ok, location: @performance_allowance }
       else
         format.html { render :edit }
@@ -65,7 +65,7 @@ class PerformanceAllowancesController < ApplicationController
   def destroy
     @performance_allowance.destroy
     respond_to do |format|
-      format.html { redirect_to performance_allowances_url, notice: 'Performance allowance was successfully destroyed.' }
+      format.html { redirect_to performance_allowances_url, notice: 'Tunjangan Kinerja Telah Dihapus.' }
       format.json { head :no_content }
     end
   end

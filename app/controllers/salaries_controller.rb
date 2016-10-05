@@ -24,7 +24,7 @@ class SalariesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'Rincian Gaji Dosen #{@salary.lecture.name}',
+        render pdf: 'Rincian Gaji Dosen',
         template: 'salaries/show.pdf.erb',
         layout: 'pdf.html.erb'
         # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
